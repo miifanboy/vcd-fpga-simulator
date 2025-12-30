@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace vcd_simulator
 {
@@ -26,7 +27,7 @@ namespace vcd_simulator
             public int size;
             public string value;
         }
-        
+        string codes = "gfedcba";
         bool isLoaded = false;
         Dictionary<int, Dictionary<char,reg>> vcd;
         Dictionary<char, reg> registersTemp;
@@ -175,9 +176,24 @@ namespace vcd_simulator
 
             timeLabel.Text = Convert.ToString(times[trackBar1.Value]);
         }
+        void FlushSSDS()
+        {
+
+            for (int i = 0; i < 4; i++)
+            {
+                foreach (var c in codes)
+                {
+                    Control ssd = Controls.Find("SSD" + Convert.ToString(i) + c, false)[0];
+                    if (ssd is PictureBox)
+                    {
+                        ssd.BackColor = Color.DimGray;
+                    }
+
+                }
+            }
+        }
         void RenderSSD(string name,string val)
         {
-            string codes = "gfedcba";
             int idx = 0;
             foreach(var c in codes)
             {
@@ -272,7 +288,7 @@ namespace vcd_simulator
         {
             List<int> timeline = vcd.Keys.ToList();
             timeline.Sort();
-
+            FlushSSDS();
             vcd[timeline[trackBar1.Value]].Values.ToList().ForEach(v => { 
                 if(v.name.StartsWith("SSD") && v.value != null)
                 {

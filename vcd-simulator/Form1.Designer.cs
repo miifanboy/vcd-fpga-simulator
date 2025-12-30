@@ -581,6 +581,7 @@
             // BTN3
             // 
             this.BTN3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.BTN3.AutoCheck = false;
             this.BTN3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN3.Location = new System.Drawing.Point(652, 329);
             this.BTN3.Name = "BTN3";
@@ -593,6 +594,7 @@
             // BTN2
             // 
             this.BTN2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.BTN2.AutoCheck = false;
             this.BTN2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN2.Location = new System.Drawing.Point(805, 329);
             this.BTN2.Name = "BTN2";
@@ -605,6 +607,7 @@
             // BTN1
             // 
             this.BTN1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.BTN1.AutoCheck = false;
             this.BTN1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN1.Location = new System.Drawing.Point(959, 329);
             this.BTN1.Name = "BTN1";
@@ -617,6 +620,7 @@
             // BTN0
             // 
             this.BTN0.Appearance = System.Windows.Forms.Appearance.Button;
+            this.BTN0.AutoCheck = false;
             this.BTN0.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN0.Location = new System.Drawing.Point(1111, 329);
             this.BTN0.Name = "BTN0";

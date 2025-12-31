@@ -192,6 +192,35 @@ namespace vcd_simulator
                 }
             }
         }
+        void FlushLEDS()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                Control led = Controls.Find("LED" + Convert.ToString(i), false)[0];
+                if (led is PictureBox)
+                {
+                    led.BackColor = Color.DimGray;
+                }
+            }
+        }
+        void FlushSwitches()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                Control sw = Controls.Find("SW" + Convert.ToString(i), false)[0];
+                if (sw is RJToggleButton cb)
+                {
+                    cb.Checked = false;
+                }
+            }
+        }
+        void FlushButtons()
+        {
+            BTN0.Checked = false;
+            BTN1.Checked = false;
+            BTN2.Checked = false;
+            BTN3.Checked = false;
+        }
         void RenderSSD(string name,string val)
         {
             int idx = 0;
@@ -289,6 +318,9 @@ namespace vcd_simulator
             List<int> timeline = vcd.Keys.ToList();
             timeline.Sort();
             FlushSSDS();
+            FlushLEDS();
+            FlushSwitches();
+            FlushButtons();
             vcd[timeline[trackBar1.Value]].Values.ToList().ForEach(v => { 
                 if(v.name.StartsWith("SSD") && v.value != null)
                 {
